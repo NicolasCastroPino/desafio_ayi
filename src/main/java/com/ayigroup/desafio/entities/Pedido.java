@@ -1,14 +1,13 @@
 package com.ayigroup.desafio.entities;
 
 import com.ayigroup.desafio.enums.Estado;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import com.ayigroup.desafio.enums.Tipo;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
+@Entity
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
