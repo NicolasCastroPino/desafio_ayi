@@ -17,20 +17,20 @@ public class UsuarioController {
 
     //Crear un usuario
     @PostMapping("/usuarios/crear")
-    public String createUsuario(@RequestBody Usuario usuario){
+    public String createUsuario(@RequestBody Usuario usuario) {
         usuarioService.newUsuario(usuario);
         return "Usuario creado con éxito";
     }
 
     //Listar todos los usuarios
     @GetMapping("/usuarios/listar")
-    public List<Usuario> listUsuarios(){
+    public List<Usuario> listUsuarios() {
         return usuarioService.getUsuarios();
     }
 
     //Editar un usuario por ID
     @PutMapping("/usuarios/editar/{idOriginal}")
-    public ResponseEntity<String> editarUsuario(@PathVariable Long idOriginal, @RequestBody Usuario usuario){
+    public ResponseEntity<String> editarUsuario(@PathVariable Long idOriginal, @RequestBody Usuario usuario) {
         Usuario usuarioExistente = usuarioService.findUsuario(idOriginal);
 
         if (usuarioExistente == null) {
@@ -47,7 +47,7 @@ public class UsuarioController {
 
     //Eliminar un usuario
     @DeleteMapping("/usuarios/eliminar/{id}")
-    public ResponseEntity<String> deleteUsuario(@PathVariable Long id){
+    public ResponseEntity<String> deleteUsuario(@PathVariable Long id) {
         usuarioService.deleteUsuario(id);
         return ResponseEntity.ok("Usuario eliminado con éxito");
     }
